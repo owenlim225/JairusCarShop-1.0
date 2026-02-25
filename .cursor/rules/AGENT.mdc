@@ -1,0 +1,216 @@
+---
+alwaysApply: true
+description: AI Agent Configuration and Context Management - Links LLM documentation, project rules, and skills reference
+---
+
+# AI Agent Configuration and Context
+
+This file provides structured instructions and context for AI coding agents (Composer Agent, Cursor Agent) to improve the quality and relevance of their suggestions and actions. It links together all agent-related resources in this project.
+
+## What are MDC Files?
+
+MDC (Markdown Components or Multi-Document Context) files are structured configuration files that provide specific instructions and context to AI agents. They help agents:
+
+- Understand project structure and conventions
+- Apply consistent coding standards
+- Access relevant documentation and skills
+- Make contextually appropriate suggestions
+- Follow project-specific best practices
+
+## Agent Context Architecture
+
+This project uses a three-tier context system for AI agents:
+
+### 1. LLM Documentation (`.cursor/llm/`)
+
+Contains machine-readable documentation formatted for AI crawlers and language models:
+
+- **`skills.llm.txt`**: Structured documentation about Skills.sh platform, including:
+  - Skills overview and installation
+  - CLI usage and commands
+  - Security and telemetry information
+  - Usage workflows and technical details
+
+**Location**: `.cursor/llm/skills.llm.txt`
+
+**Purpose**: Provides AI agents with structured knowledge about the Skills ecosystem, enabling them to:
+- Understand how to install and use skills
+- Reference Skills.sh documentation accurately
+- Guide users through skill installation workflows
+- Understand security considerations
+
+### 2. Project Rules (`.cursor/rules/`)
+
+Contains project-specific rules, best practices, and role definitions:
+
+- **`AGENT.mdc`** (this file): Agent configuration and context linking
+- **`maintainer.mdc`**: Engineering fundamentals and DevOps practices
+- **`production.mdc`**: Production deployment standards
+- **`Project_Manager.mdc`**: Project management and Agile methodologies
+- **`rules.mdc`**: Clean code and collaboration best practices
+- **`README.mdc`**: Professional README standards
+- **`App_reviewer.mdc`**: Application review guidelines
+- **`AI Text Humanizer Specialist.mdc`**: Content humanization techniques
+
+**Location**: `.cursor/rules/*.mdc`
+
+**Purpose**: Provides AI agents with:
+- Coding standards and best practices
+- Project structure requirements
+- Role-specific behaviors and responsibilities
+- Documentation standards
+- Quality gates and acceptance criteria
+
+### 3. Skills Reference (`skills-reference/`)
+
+Contains reference implementations and specifications for Agent Skills:
+
+- **`skills/`**: Example skill implementations including:
+  - `algorithmic-art/`: Creative art generation skills
+  - `brand-guidelines/`: Brand compliance skills
+  - `canvas-design/`: Design and typography skills
+  - `doc-coauthoring/`: Document collaboration skills
+  - `docx/`, `pdf/`, `pptx/`, `xlsx/`: Document manipulation skills
+  - `frontend-design/`: Frontend design skills
+  - `internal-comms/`: Communication skills
+  - `mcp-builder/`: MCP server generation skills
+  - `skill-creator/`: Skill creation automation
+  - `webapp-testing/`: Testing automation skills
+  - And more...
+
+- **`spec/`**: Agent Skills specification documentation
+- **`template/`**: Skill template for creating new skills
+
+**Location**: `skills-reference/`
+
+**Purpose**: Provides AI agents with:
+- Reference implementations of skills
+- Patterns and best practices for skill creation
+- Understanding of skill structure and metadata
+- Examples of procedural knowledge encoding
+- Template for creating new skills
+
+## How Agents Use This Context
+
+### Context Loading Order
+
+1. **Always Applied Rules** (`alwaysApply: true`):
+   - `AGENT.mdc` (this file)
+   - `maintainer.mdc`
+   - `rules.mdc`
+   - Other always-applied rules
+
+2. **Context-Specific Rules** (applied based on file patterns or explicit references):
+   - `README.mdc` when working with README files
+   - `Project_Manager.mdc` for project planning tasks
+   - `App_reviewer.mdc` for code review tasks
+
+3. **LLM Documentation** (referenced when needed):
+   - `skills.llm.txt` when discussing or implementing skills
+   - Provides structured knowledge about external platforms
+
+4. **Skills Reference** (referenced for examples):
+   - Skill implementations when creating new skills
+   - Templates when scaffolding skill structures
+   - Specifications when validating skill compliance
+
+### Agent Behavior Guidelines
+
+When acting as an AI agent in this project:
+
+1. **Check Context First**: Always reference relevant `.cursor/rules/*.mdc` files before making suggestions
+2. **Link Resources**: When discussing skills, reference both `skills.llm.txt` and `skills-reference/` examples
+3. **Follow Standards**: Apply rules from `rules.mdc`, `maintainer.mdc`, and other applicable rule files
+4. **Use Examples**: Reference `skills-reference/` implementations when creating similar functionality
+5. **Maintain Consistency**: Ensure suggestions align with project conventions defined in rule files
+
+## Integration Points
+
+### Skills and Agent Rules
+
+When working with skills:
+- Reference `.cursor/llm/skills.llm.txt` for Skills.sh platform knowledge
+- Use `skills-reference/` for implementation patterns
+- Follow skill structure defined in `skills-reference/spec/`
+- Apply coding standards from `.cursor/rules/rules.mdc`
+
+### Documentation and Rules
+
+When creating documentation:
+- Follow standards in `.cursor/rules/README.mdc`
+- Apply writing style from `AI Text Humanizer Specialist.mdc`
+- Reference project context from relevant rule files
+
+### Development Workflow
+
+When developing features:
+- Follow DevOps practices from `maintainer.mdc`
+- Apply clean code principles from `rules.mdc`
+- Use project management guidance from `Project_Manager.mdc`
+- Reference production standards from `production.mdc`
+
+## File Structure Reference
+
+```
+.cursor/
+├── llm/
+│   └── skills.llm.txt          # Skills.sh platform documentation
+└── rules/
+    ├── AGENT.mdc               # This file - agent context linking
+    ├── maintainer.mdc         # DevOps and engineering fundamentals
+    ├── production.mdc         # Production deployment standards
+    ├── Project_Manager.mdc     # Project management practices
+    ├── rules.mdc              # Clean code and collaboration
+    ├── README.mdc             # README documentation standards
+    ├── App_reviewer.mdc       # Code review guidelines
+    └── AI Text Humanizer Specialist.mdc  # Content humanization
+
+skills-reference/
+├── skills/                    # Example skill implementations
+│   ├── algorithmic-art/
+│   ├── brand-guidelines/
+│   ├── canvas-design/
+│   ├── doc-coauthoring/
+│   ├── docx/
+│   ├── frontend-design/
+│   ├── internal-comms/
+│   ├── mcp-builder/
+│   ├── skill-creator/
+│   ├── webapp-testing/
+│   └── ... (more skills)
+├── spec/
+│   └── agent-skills-spec.md   # Agent Skills specification
+└── template/
+    └── SKILL.md               # Skill template
+```
+
+## Quick Reference
+
+### For Skill Development
+- Platform docs: `.cursor/llm/skills.llm.txt`
+- Examples: `skills-reference/skills/`
+- Template: `skills-reference/template/SKILL.md`
+- Spec: `skills-reference/spec/agent-skills-spec.md`
+
+### For Code Development
+- Standards: `.cursor/rules/rules.mdc`
+- DevOps: `.cursor/rules/maintainer.mdc`
+- Production: `.cursor/rules/production.mdc`
+
+### For Documentation
+- README standards: `.cursor/rules/README.mdc`
+- Writing style: `.cursor/rules/AI Text Humanizer Specialist.mdc`
+
+### For Project Management
+- Practices: `.cursor/rules/Project_Manager.mdc`
+- Review: `.cursor/rules/App_reviewer.mdc`
+
+## Maintenance
+
+This file should be updated when:
+- New rule files are added to `.cursor/rules/`
+- New LLM documentation is added to `.cursor/llm/`
+- Skills reference structure changes
+- Agent behavior requirements evolve
+
+Keep this file synchronized with the actual project structure to ensure agents have accurate context.

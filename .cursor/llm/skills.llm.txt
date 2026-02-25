@@ -1,0 +1,108 @@
+# Skills.sh Documentation
+
+## Overview
+
+Skills.sh is a platform for discovering, installing, and using reusable capabilities for AI agents. Skills provide procedural knowledge that helps agents accomplish specific tasks more effectively. Think of them as plugins or extensions that enhance what your AI agent can do.
+
+## What are Skills?
+
+Skills are reusable capabilities for AI agents. They provide procedural knowledge that helps agents accomplish specific tasks more effectively. Skills function as plugins or extensions that enhance AI agent capabilities.
+
+## Getting Started
+
+### Installation
+
+To install a skill, use the `skills` CLI:
+
+```bash
+npx skills add vercel-labs/agent-skills
+```
+
+This command installs the skill and makes it available to your AI agent.
+
+## Skills Leaderboard and Ranking
+
+The skills leaderboard ranks skills based on anonymous telemetry data collected from the `skills` CLI. When users install skills, aggregated usage data helps surface the most popular and useful skills in the ecosystem.
+
+### Telemetry and Privacy
+
+- Telemetry is completely anonymous
+- Only tracks which skills are being installed
+- No personal information collected
+- No usage patterns collected
+
+## Discovering Skills
+
+Visit the homepage at https://skills.sh to browse the skills leaderboard and discover new capabilities for your agents.
+
+## Security
+
+### Security Audits
+
+Routine security audits assess skills and their contents for malicious content. These audits help maintain a safe ecosystem for users.
+
+### Reporting Security Issues
+
+To report security issues, visit security.vercel.com.
+
+### User Responsibility
+
+While efforts are made to maintain a safe ecosystem, Skills.sh cannot guarantee the quality or security of every skill listed. Users are encouraged to:
+- Review skills before installing
+- Use their own judgment
+- Report suspicious or malicious content
+
+## Documentation Structure
+
+### Main Documentation
+
+- **Overview**: Introduction to skills and their purpose
+- **CLI**: Command-line interface documentation
+- **FAQ**: Frequently asked questions
+
+### Key Concepts
+
+1. **Skills as Reusable Capabilities**: Skills extend AI agent functionality
+2. **Procedural Knowledge**: Skills provide step-by-step task guidance
+3. **Plugin Architecture**: Skills integrate seamlessly with AI agents
+4. **Community-Driven**: Skills are created and maintained by the community
+
+## Usage Workflow
+
+1. Browse skills on the homepage leaderboard
+2. Select a skill that meets your needs
+3. Install using the CLI: `npx skills add [skill-name]`
+4. The skill becomes available to your AI agent
+5. Use the skill's capabilities in your agent workflows
+
+## Technical Details
+
+### CLI Command Structure
+
+The primary CLI command follows this pattern:
+```
+npx skills add [owner]/[repository]
+```
+
+Example:
+```
+npx skills add vercel-labs/agent-skills
+```
+
+### Skill Availability
+
+Once installed, skills are automatically made available to your AI agent without additional configuration.
+
+## Resources
+
+- Homepage: https://skills.sh
+- Documentation: https://skills.sh/docs
+- Security Reporting: https://security.vercel.com
+
+## Metadata
+
+- Last Updated: 2025-01-27
+- Documentation Version: 1.0
+- Platform: Skills.sh
+- Maintainer: Vercel Labs
+
