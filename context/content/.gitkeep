@@ -1,0 +1,8 @@
+# This directory stores raw LLM-generated content
+
+Place raw, unprocessed outputs from LLMs here:
+- Claude outputs → content/claude/
+- GPT outputs → content/gpt/
+- Gemini outputs → content/gemini/
+- Other LLMs → content/other/
+

@@ -1,0 +1,8 @@
+# This directory stores finalized LLM-generated outputs
+
+Place reviewed and approved LLM outputs here:
+- Code → output/code/
+- Documentation → output/docs/
+- Planning → output/plans/
+- Analysis → output/analysis/
+

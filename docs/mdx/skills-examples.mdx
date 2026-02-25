@@ -1,0 +1,165 @@
+# Skills Examples
+
+Practical examples of Claude skills in action.
+
+## Example 1: tech-stack-selector
+
+**User:** "What tech stack should we use for a SaaS product with 10K expected users?"
+
+**Claude (using tech-stack-selector skill):**
+
+Based on your requirements, I recommend:
+
+**Frontend:**
+- TypeScript + Next.js 14+ (React framework)
+- Tailwind CSS (styling)
+- Zustand (state management)
+
+**Backend:**
+- Node.js 20+ LTS
+- Next.js API Routes or Express
+- PostgreSQL 15+ (database)
+- Redis (caching)
+
+**Hosting:**
+- Vercel (frontend)
+- Railway or Render (backend)
+
+**Rationale:**
+- TypeScript provides type safety
+- Next.js handles SSR and routing
+- PostgreSQL scales to 10K+ users easily
+- Vercel provides global CDN
+
+## Example 2: architecture-decisions
+
+**User:** "Create an ADR for choosing PostgreSQL over MongoDB"
+
+**Claude (using architecture-decisions skill):**
+
+I'll create ADR-001 for this decision:
+
+**ADR-001: Database Selection - PostgreSQL**
+
+**Status:** Accepted
+
+**Context:**
+We need to choose a database for our application. Two options: PostgreSQL (relational) or MongoDB (NoSQL).
+
+**Decision:**
+Use PostgreSQL as the primary database.
+
+**Rationale:**
+- ACID transactions ensure data integrity
+- Rich data types (JSON, arrays, custom types)
+- Mature ecosystem and tooling
+- Scales to billions of rows
+- Better with ORMs (Prisma, Drizzle)
+
+**Consequences:**
+- ✅ Strong data consistency
+- ✅ Better tooling support
+- ❌ Requires schema design upfront
+
+**File created:** `docs/adr/adr-001-database-selection.md`
+
+## Example 3: code-standards-enforcer
+
+**User:** "Review this code for quality"
+
+**Claude (using code-standards-enforcer skill):**
+
+Reviewing your code against 40+ quality criteria:
+
+**Issues Found:**
+1. Missing error handling in async function
+2. No input validation
+3. Hardcoded API endpoint
+4. Missing JSDoc comments
+
+**Recommendations:**
+1. Add try-catch block
+2. Validate inputs with Zod
+3. Move endpoint to environment variable
+4. Add function documentation
+
+**Quality Score:** 6/10
+
+## Example 4: ci-cd-pipeline-builder
+
+**User:** "Set up CI/CD for this Next.js project"
+
+**Claude (using ci-cd-pipeline-builder skill):**
+
+Creating GitHub Actions workflow:
+
+**Workflow Created:** `.github/workflows/ci.yml`
+
+**Includes:**
+- Lint check
+- Type check
+- Unit tests
+- Integration tests
+- Security scan
+- Build verification
+
+**Deployment:** Configured for Vercel automatic deployment
+
+## Example 5: agile-executor
+
+**User:** "Plan a 2-week sprint"
+
+**Claude (using agile-executor skill):**
+
+Sprint Planning for Sprint 5:
+
+**Sprint Goal:** Complete user authentication feature
+
+**Stories:**
+1. User registration (5 points)
+2. Login functionality (3 points)
+3. Password reset (3 points)
+4. Email verification (2 points)
+
+**Total:** 13 story points
+
+**Assignments:**
+- Backend: Stories 1, 2
+- Frontend: Stories 3, 4
+
+**Definition of Done:**
+- Code reviewed
+- Tests passing (80%+ coverage)
+- Deployed to staging
+
+## Example 6: project-risk-identifier
+
+**User:** "Identify risks for our project"
+
+**Claude (using project-risk-identifier skill):**
+
+Risk Assessment:
+
+**High Priority Risks:**
+1. Third-party API downtime (Medium probability, High impact)
+2. Timeline delays (Medium probability, High impact)
+3. Security vulnerabilities (Low probability, Critical impact)
+
+**Mitigation Strategies:**
+1. Implement retry logic and fallback APIs
+2. Add buffer time and regular monitoring
+3. Regular security audits and automated scanning
+
+**Risk Register Updated:** `planning/8-Risk-Management.md`
+
+## Getting Started
+
+Try asking Claude:
+
+- "What tech stack should we use?"
+- "Create an ADR for [decision]"
+- "Review this code"
+- "Set up CI/CD"
+- "Plan next sprint"
+- "What are our project risks?"
+
